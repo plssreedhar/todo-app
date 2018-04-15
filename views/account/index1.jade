@@ -1,0 +1,23 @@
+html
+ head
+  title Todo List
+ body
+  h3 Todo List
+  a(href="account/add") Create Task
+  br
+  table(border="1")
+   tr
+    th Task Id
+    th Task Name
+    th Description
+    th Action
+    
+   each account in accounts
+    tr
+     td #{account.id}
+     td #{account.name}
+     td #{account.description}
+     td
+      a(href="/account/edit/"+ account.id,style="text-decoration:none;color:green",onclick="return confirm('Are you sure u want to Update this task?')") Update Task
+      a(href="/account/delete/" + account.id,style="text-decoration:none;color:red", onclick="return confirm('Are you sure u want to Delete this task?')") Delete Task
+   
